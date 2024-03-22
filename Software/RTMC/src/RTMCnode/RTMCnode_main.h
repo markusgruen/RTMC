@@ -1,3 +1,10 @@
+/*
+This is the RTMCnode's library that contains the functions that are associated 
+with what otherwise would be contained in the main program. It contains the 
+interrupt routine for the trigger-impulse, functions to enable and disable the 
+interrupt and the enums for the state machine. It also contains declarations
+for the functions located in the ino-file.
+
 MIT License
 
 Copyright (c) 2024 Markus Grün
@@ -19,3 +26,37 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+*/
+
+#ifdef ARDUINO_ARCH_RP2040
+#ifndef RTMCNODE_MAIN_H
+#define RTMCNODE_MAIN_H
+
+enum StateMachine{STATE_IDLE,
+                  STATE_TRIGGERED,
+                  STATE_DATA_RECEIVED,
+                  STATE_DATA_PROCESSED,
+                  STATE_DATA_READ,
+                  STATE_FAILSAFE,
+                  };
+extern volatile StateMachine state;
+
+enum Modes{MODE_IDLE,
+           MODE_TEST,
+           MODE_RUN,
+           };
+extern Modes mode;
+
+
+void triggerIRQ();
+void enableTrigger();
+void disableTrigger();
+
+void readSensorData();
+void processInputData();
+void RTMCloop();
+void failsafe();
+
+
+#endif
+#endif

@@ -1,4 +1,4 @@
-MIT License
+/* MIT License
 
 Copyright (c) 2024 Markus Grün
 
@@ -19,3 +19,25 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+*/
+
+#ifdef ARDUINO_ARCH_RP2040
+
+#include "RTMCnode_main.h"
+#include "RTMCnode/RTMCnode_pinmapping.h"
+#include <Arduino.h>
+
+void enableTrigger(){
+  attachInterrupt(digitalPinToInterrupt(TRIGGER_PIN), triggerIRQ, RISING);
+  }
+
+void disableTrigger(){
+  detachInterrupt(digitalPinToInterrupt(TRIGGER_PIN));
+  }
+
+void triggerIRQ() {
+  disableTrigger();
+  state = STATE_TRIGGERED;
+  }
+
+#endif

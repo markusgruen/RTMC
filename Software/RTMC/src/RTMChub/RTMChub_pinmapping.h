@@ -1,3 +1,6 @@
+/*
+This is file that contains the pinmapping for the RTMChub.
+ 
 MIT License
 
 Copyright (c) 2024 Markus Grün
@@ -19,3 +22,18 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+*/
+
+#ifndef RTMCHUB_PINMAPPING_H
+#define RTMCHUB_PINMAPPING_H
+
+// Pinmapping
+#define TRIGGER_PIN        3
+#define TX_EN_PIN         27
+#define NODE_RESET_PIN     2
+#define MAIN_RESET_PIN    38
+#define MODE_PIN          23
+#define START_BUTTON_PIN  22 
+#define START_LED_PIN      4 
+
+#endif

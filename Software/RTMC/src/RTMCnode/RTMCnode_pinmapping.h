@@ -1,3 +1,6 @@
+/*
+This is file that contains the pinmapping for the RTMCnode.
+
 MIT License
 
 Copyright (c) 2024 Markus Grün
@@ -19,3 +22,15 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+*/
+
+
+#ifndef RTMCNODE_PINMAPPING_H
+#define RTMCNODE_PINMAPPING_H
+
+#define TRIGGER_PIN     22
+#define TX_EN_PIN       27
+#define SDA_PIN         12
+#define SCL_PIN         13
+
+#endif
