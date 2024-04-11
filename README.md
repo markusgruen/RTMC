@@ -5,7 +5,7 @@
 ## What is RTMC?
 
 ### Introduction
-RTMC is an open source data acquisition [(DAQ)](https://en.wikipedia.org/wiki/Data_acquisition) platform which can measure signals from multiple sensors or other inputs and save the data for later analysis. [Up to eight](#number-of-connected-sensors) sensors can be read simultaneously and synchronously, with precise timing, and at sampling rates of up to 4.4 kHz.
+RTMC (Real Time Measure and Control) is an open source data acquisition [(DAQ)](https://en.wikipedia.org/wiki/Data_acquisition) platform which can measure signals from multiple sensors or other inputs and save the data for later analysis. [Up to eight](#number-of-connected-sensors) sensors can be read simultaneously and synchronously, with precise timing, and at sampling rates of up to 4.4 kHz.
 
 This task itself is nothing new or special and countless commercial and open source devices are available. However, almost all of these devices only accept analog or simple digital signals, which severly limits the user's choice of sensors. Nowadays, many sensors are available with an I2C or SPI interface, but those cannot be connected with these conventional DAQs or data logging systems. RTMC, however, works with ***any*** sensor:
 - analog
